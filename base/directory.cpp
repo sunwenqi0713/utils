@@ -100,5 +100,11 @@ void GetDirFiles(const std::string &path, std::vector<std::string> &files)
   closedir(dir);
 }
 
+bool DirectoryExists(const std::string &directory_path)
+{
+  struct stat info;
+  return stat(directory_path.c_str(), &info) == 0 && (info.st_mode & S_IFDIR);
+}
+
 }
 }

@@ -19,6 +19,12 @@ const int MAX_FILE_LENGTH = 32 * 1024 * 1024;
 namespace utils {
 namespace base {
 
+bool PathExists(const std::string &path)
+{
+  struct stat info;
+  return stat(path.c_str(), &info) == 0;
+}
+
 bool LoadStringFromFile(const std::string &filePath, std::string &content)
 {
   std::ifstream file(filePath.c_str());

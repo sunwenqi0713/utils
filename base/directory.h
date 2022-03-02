@@ -53,6 +53,15 @@ std::string IncludeTrailingPathDelimiter(const std::string &path);
  */
 void GetDirFiles(const std::string &path, std::vector<std::string> &files);
 
+/**
+ * @brief Check if the directory specified by directory_path exists
+ *        and is indeed a directory.
+ * @param directory_path Directory path.
+ * @return If the directory specified by directory_path exists
+ *         and is indeed a directory.
+ */
+bool DirectoryExists(const std::string &directory_path);
+
 }
 }
 
